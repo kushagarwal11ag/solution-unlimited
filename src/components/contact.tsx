@@ -2,18 +2,18 @@ const contact = () => {
 	return (
 		<section
 			id="contact"
-			className="w-full py-12 md:py-24 lg:py-32 bg-white text-black"
+			className="w-full py-12 md:py-24 lg:py-32 dark:bg-black"
 		>
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-white px-3 py-1 text-sm">
+						<div className="inline-block rounded-lg px-3 py-1 text-sm">
 							Contact Us
 						</div>
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 							Get in Touch
 						</h2>
-						<p className="max-w-[900px] text-black/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							Have a project in mind or need help with your
 							business? Fill out the form below and one of our
 							experts will be in touch.
@@ -56,7 +56,7 @@ const contact = () => {
 							</div>
 							<button
 								type="submit"
-								className="p-2 w-full hover:bg-black hover:text-white rounded"
+								className="p-2 w-full rounded"
 							>
 								Submit
 							</button>

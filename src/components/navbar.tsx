@@ -1,10 +1,11 @@
 import Link from "next/link";
+import ToggleButton from "./mode-toggle"
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
 const navbar = () => {
 	return (
-		<header className="px-4 lg:px-6 h-14 flex items-center bg-white text-black">
+		<header className="px-4 lg:px-6 h-14 flex items-center dark:bg-black border-b">
 			<Link
 				href="#home"
 				className="flex gap-2 items-center justify-center"
@@ -13,7 +14,7 @@ const navbar = () => {
 				<BuildingIcon className="h-6 w-6" />
 				<span className="uppercase font-bold">Solution Unlimited</span>
 			</Link>
-			<nav className="ml-auto flex gap-4 sm:gap-6">
+			<nav className="ml-auto flex gap-4 sm:gap-6 items-center">
 				<Link
 					href="#services"
 					className="text-sm font-medium hover:underline underline-offset-4"
@@ -35,6 +36,7 @@ const navbar = () => {
 				>
 					Contact
 				</Link>
+				<ToggleButton />
 			</nav>
 		</header>
 	);

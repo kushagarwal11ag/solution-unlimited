@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "./ui/button";
 
 const work = () => {
 	return (
 		<section
 			id="portfolio"
-			className="w-full py-12 md:py-24 lg:py-32 bg-muted"
+			className="w-full py-12 md:py-24 lg:py-32 dark:bg-black"
 		>
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -32,13 +32,7 @@ const work = () => {
 							className="aspect-video object-cover"
 						/>
 						<div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity hover:opacity-100">
-							<Link
-								href="#"
-								className="inline-flex h-9 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black shadow transition-colors hover:bg-black/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-								prefetch={false}
-							>
-								View Project
-							</Link>
+							<Button variant="default">View Project</Button>
 						</div>
 					</div>
 					<div className="relative overflow-hidden rounded-xl">
@@ -50,13 +44,7 @@ const work = () => {
 							className="aspect-video object-cover"
 						/>
 						<div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity hover:opacity-100">
-							<Link
-								href="#"
-								className="inline-flex h-9 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black shadow transition-colors hover:bg-black/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-								prefetch={false}
-							>
-								View Project
-							</Link>
+							<Button variant="default">View Project</Button>
 						</div>
 					</div>
 					<div className="relative overflow-hidden rounded-xl">
@@ -68,13 +56,7 @@ const work = () => {
 							className="aspect-video object-cover"
 						/>
 						<div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity hover:opacity-100">
-							<Link
-								href="#"
-								className="inline-flex h-9 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black shadow transition-colors hover:bg-black/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-								prefetch={false}
-							>
-								View Project
-							</Link>
+							<Button variant="default">View Project</Button>
 						</div>
 					</div>
 				</div>
