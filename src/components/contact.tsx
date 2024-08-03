@@ -1,3 +1,5 @@
+"use client";
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -20,7 +22,7 @@ const formSchema = z.object({
 	message: z.string().min(10).max(500),
 });
 
-const contact = () => {
+const Contact = () => {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -169,4 +171,4 @@ const contact = () => {
 	);
 };
 
-export default contact;
+export default Contact;
