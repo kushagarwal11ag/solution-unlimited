@@ -18,7 +18,7 @@ const work = () => {
 						</h2>
 						<p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							Take a look at some of our past projects and see how
-							we've helped businesses like yours succeed.
+							we&apos;ve helped businesses like yours succeed.
 						</p>
 					</div>
 				</div>
