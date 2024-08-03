@@ -1,4 +1,38 @@
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+import { Button } from "@/components/ui/button";
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const formSchema = z.object({
+	name: z.string().min(3).max(20),
+	email: z.string().email(),
+	message: z.string().min(10).max(500),
+});
+
 const contact = () => {
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			name: "",
+			email: "",
+			message: "",
+		},
+	});
+	function onSubmit(values: z.infer<typeof formSchema>) {
+		// Do something with the form values.
+		console.log(values);
+	}
 	return (
 		<section
 			id="contact"
@@ -20,49 +54,116 @@ const contact = () => {
 						</p>
 					</div>
 				</div>
-				<div className="mx-auto w-full max-w-2xl space-y-4 py-12">
-					<form>
-						<div className="grid gap-4">
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-								<div className="space-y-2 flex flex-col gap-2">
-									<label htmlFor="name">Name</label>
-									<input
-										id="name"
-										className="py-1 px-2 rounded border"
-										placeholder="John Doe"
-										required
-									/>
-								</div>
-								<div className="space-y-2 flex flex-col gap-2">
-									<label htmlFor="email">Email</label>
-									<input
-										id="email"
-										type="email"
-										className="py-1 px-2 rounded border"
-										placeholder="john@example.com"
-										required
-									/>
-								</div>
-							</div>
-							<div className="space-y-2 flex flex-col gap-2">
-								<label htmlFor="message">Message</label>
-								<textarea
-									id="message"
-									rows={5}
-									className="py-1 px-2 rounded border"
-									placeholder="How can we help you?"
-									required
+				<Form {...form}>
+					<form
+						onSubmit={form.handleSubmit(onSubmit)}
+						className="space-y-8 dark:bg-black"
+					>
+						<div className="flex gap-2">
+							<div className="w-full">
+								<FormField
+									control={form.control}
+									name="name"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel
+												className={
+													form.formState.errors.email
+														? "dark:text-red-500"
+														: ""
+												}
+											>
+												Name
+											</FormLabel>
+											<FormControl>
+												<Input
+													placeholder="John Doe"
+													{...field}
+												/>
+											</FormControl>
+											<FormMessage
+												className={
+													form.formState.errors.email
+														? "dark:text-red-500"
+														: ""
+												}
+											/>
+										</FormItem>
+									)}
 								/>
 							</div>
-							<button
-								type="submit"
-								className="p-2 w-full rounded"
-							>
-								Submit
-							</button>
+							<div className="w-full">
+								<FormField
+									control={form.control}
+									name="email"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel
+												className={
+													form.formState.errors.email
+														? "dark:text-red-500"
+														: ""
+												}
+											>
+												Email
+											</FormLabel>
+											<FormControl>
+												<Input
+													placeholder="john@example.com"
+													{...field}
+												/>
+											</FormControl>
+											<FormMessage
+												className={
+													form.formState.errors.email
+														? "dark:text-red-500"
+														: ""
+												}
+											/>
+										</FormItem>
+									)}
+								/>
+							</div>
 						</div>
+						<FormField
+							control={form.control}
+							name="message"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel
+										className={
+											form.formState.errors.email
+												? "dark:text-red-500"
+												: ""
+										}
+									>
+										Message
+									</FormLabel>
+									<FormControl>
+										<Input
+											placeholder="I want to"
+											{...field}
+										/>
+									</FormControl>
+									<FormMessage
+										className={
+											form.formState.errors.email
+												? "dark:text-red-500"
+												: ""
+										}
+									/>
+								</FormItem>
+							)}
+						/>
+						<Button
+							type="submit"
+							variant="default"
+							className="w-full"
+						>
+							Submit
+						</Button>
 					</form>
-				</div>
+				</Form>
 			</div>
 		</section>
 	);
