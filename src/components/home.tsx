@@ -1,33 +1,40 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
+import Link from "next/link";
 
 const home = () => {
 	return (
-		<section id="home" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 dark:bg-black">
-			<div className="container px-4 md:px-6">
-				<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-					<div className="flex flex-col justify-center space-y-4">
-						<div className="space-y-2">
-							<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-								Trusted Solutions for Your Business
-							</h1>
-							<p className="max-w-[600px] text-primary-foreground/80 md:text-xl">
-								Solution Unlimited provides top-notch property
-								management, electrical installation, and repair
-								services to help your business thrive.
-							</p>
-						</div>
-						<div className="flex flex-col gap-2 min-[400px]:flex-row">
-							<Button variant="default">Learn More</Button>
-						</div>
+		<section
+			id="home"
+			className="py-10 lg:py-0 min-h-screen flex items-center dark:bg-black"
+		>
+			<div className="container p-4 md:px-6">
+				<div className="grid gap-6 grid-cols-1 lg:grid-cols-2 lg:gap-12">
+					<div className="flex flex-col gap-5">
+						<h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+							Trusted Solutions for Your Business
+						</h1>
+						<p className="md:text-xl">
+							Solution Unlimited provides comprehensive
+							electrical, civil, and many more services to ensure
+							efficiency, safety and minimal disruption which
+							helping your business thrive.
+						</p>
+						<Link
+							href="#services"
+							className="w-fit inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 h-10 px-4 py-2 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
+						>
+							Learn More
+						</Link>
 					</div>
-					<Image
-						src="/hero.jpg"
-						width="550"
-						height="310"
-						alt="Hero"
-						className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-					/>
+					<div className="relative overflow-hidden h-80">
+						<Image
+							src="/hero.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Hero"
+							className="rounded-xl"
+						/>
+					</div>
 				</div>
 			</div>
 		</section>

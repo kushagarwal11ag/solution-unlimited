@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 const footer = () => {
 	return (
-		<footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-black">
+		<footer className="flex flex-col gap-2 sm:flex-row py-2 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-black">
 			<p className="text-xs">
 				&copy; 2024 Solution Unlimited. All rights reserved.
 			</p>

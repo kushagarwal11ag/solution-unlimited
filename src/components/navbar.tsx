@@ -12,7 +12,7 @@ const navbar = () => {
 				prefetch={false}
 			>
 				<BuildingIcon className="h-6 w-6" />
-				<span className="uppercase font-bold">Solution Unlimited</span>
+				<span className="hidden sm:flex uppercase font-bold">Solution Unlimited</span>
 			</Link>
 			<nav className="ml-auto flex gap-4 sm:gap-6 items-center">
 				<Link
