@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -30,7 +32,7 @@ const mobileItems = [
 	},
 ];
 
-const navbar = () => {
+const Navbar = () => {
 	const [open, setOpen] = useState(false);
 	const router = useRouter();
 	return (
@@ -120,4 +122,4 @@ const BuildingIcon: React.FC<IconProps> = (props) => (
 	</svg>
 );
 
-export default navbar;
+export default Navbar;
