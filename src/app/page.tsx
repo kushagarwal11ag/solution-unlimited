@@ -22,9 +22,9 @@ export default function Component() {
       <Footer />
       <Link
         href="tel:+919624019466"
-        className="fixed bottom-14 right-9 p-4 bg-black text-white dark:bg-white dark:text-black rounded-full shadow-lg transition-colors flex items-center justify-center"
+        className="fixed bottom-5 right-5 p-4 bg-black text-white dark:bg-white dark:text-black rounded-full shadow-lg transition-colors flex items-center justify-center"
       >
-        <i className="fas fa-phone-alt text-2xl"></i>
+        <i className="fas fa-phone text-2xl"></i>
       </Link>
     </div>
   );

@@ -1,44 +1,95 @@
+import { useState } from "react";
 import Link from "next/link";
-import ToggleButton from "./mode-toggle"
+import { useRouter } from "next/navigation";
+import ToggleButton from "./mode-toggle";
+import {
+	Sheet,
+	SheetContent,
+	SheetDescription,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu as MenuIcon } from "lucide-react";
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
+const mobileItems = [
+	{
+		name: "Services",
+		link: "#services",
+	},
+	{
+		name: "Portfolio",
+		link: "#portfolio",
+	},
+	{
+		name: "Contact",
+		link: "#contact",
+	},
+];
+
 const navbar = () => {
+	const [open, setOpen] = useState(false);
+	const router = useRouter();
 	return (
-		<header className="px-4 lg:px-6 h-14 flex items-center dark:bg-black border-b">
-			<Link
-				href="#home"
-				className="flex gap-2 items-center justify-center"
-				prefetch={false}
-			>
-				<BuildingIcon className="h-6 w-6" />
-				<span className="hidden sm:flex uppercase font-bold">Solution Unlimited</span>
-			</Link>
-			<nav className="ml-auto flex gap-4 sm:gap-6 items-center">
+		<Sheet open={open} onOpenChange={setOpen}>
+			<header className="px-4 lg:px-6 h-14 flex items-center dark:bg-black border-b">
 				<Link
-					href="#services"
-					className="text-sm font-medium hover:underline underline-offset-4"
+					href="#home"
+					className="flex gap-2 items-center justify-center"
 					prefetch={false}
 				>
-					Services
+					<BuildingIcon className="h-6 w-6" />
+					<span className="hidden sm:flex uppercase font-bold">
+						Solution Unlimited
+					</span>
 				</Link>
-				<Link
-					href="#portfolio"
-					className="text-sm font-medium hover:underline underline-offset-4"
-					prefetch={false}
-				>
-					Portfolio
-				</Link>
-				<Link
-					href="#contact"
-					className="text-sm font-medium hover:underline underline-offset-4"
-					prefetch={false}
-				>
-					Contact
-				</Link>
-				<ToggleButton />
-			</nav>
-		</header>
+				<nav className="ml-auto flex gap-4 sm:gap-6 items-center">
+					<div className="hidden sm:flex gap-6">
+						{mobileItems.map((item, index) => (
+							<Link
+								key={index}
+								href={item.link}
+								className="text-sm font-medium hover:underline underline-offset-4"
+							>
+								{item.name}
+							</Link>
+						))}
+					</div>
+
+					<ToggleButton />
+					<SheetTrigger asChild>
+						<Button
+							variant="ghost"
+							size="icon"
+							className="sm:hidden"
+						>
+							<MenuIcon />
+						</Button>
+					</SheetTrigger>
+					<SheetContent side="right">
+						<div className="mt-5 flex flex-col items-start gap-6">
+							{mobileItems.map((item, index) => (
+								<Button
+									variant="ghost"
+									size="icon"
+									key={index}
+									className="w-full p-2"
+									onClick={() => {
+										setOpen(false);
+										router.push(item.link);
+									}}
+								>
+									{item.name}
+								</Button>
+							))}
+						</div>
+					</SheetContent>
+				</nav>
+			</header>
+		</Sheet>
 	);
 };
 

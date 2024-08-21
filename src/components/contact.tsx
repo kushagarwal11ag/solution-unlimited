@@ -36,7 +36,10 @@ const Contact = () => {
 		console.log(values);
 	}
 	return (
-		<section id="contact" className="pb-20 dark:bg-black container px-4 md:px-6">
+		<section
+			id="contact"
+			className="pb-20 dark:bg-black container px-4 md:px-6"
+		>
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center text-center">
 					<div className="inline-block rounded-lg px-3 py-1 text-sm">
@@ -56,7 +59,7 @@ const Contact = () => {
 						onSubmit={form.handleSubmit(onSubmit)}
 						className="space-y-8 dark:bg-black"
 					>
-						<div className="flex gap-2">
+						<div className="flex flex-col sm:flex-row gap-2">
 							<div className="w-full">
 								<FormField
 									control={form.control}
@@ -155,6 +158,7 @@ const Contact = () => {
 						<Button
 							type="submit"
 							variant="default"
+							className="w-full sm:w-fit"
 						>
 							Submit
 						</Button>
