@@ -58,10 +58,12 @@ const work = () => {
 						</div>
 					</div>
 				</div>
-				<p className="text-3xl font-bold tracking-tighter">
-					Solution Unlimited - Empowering Industries, Anytime,
-					Anywhere.
-				</p>
+				<div className="my-10 p-10 sm:p-20 bg-black dark:bg-white border rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]">
+					<p className="text-3xl text-white dark:text-black font-bold tracking-tighter">
+						Solution Unlimited - Empowering Industries, Anytime,
+						Anywhere
+					</p>
+				</div>
 			</div>
 		</section>
 	);
