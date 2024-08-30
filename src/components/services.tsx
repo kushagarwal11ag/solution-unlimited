@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { Button } from "./ui/button";
+import Fabrication from "./services/fabrication";
+import Electric from "./services/electric";
+import Plumbing from "./services/plumbing";
 
 const services = () => {
 	return (
@@ -24,112 +25,9 @@ const services = () => {
 						with multiple vendors.
 					</p>
 				</div>
-				<div className="grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-					<div className="flex flex-col justify-center order-2 lg:order-1">
-						<div className="grid gap-2">
-							<h3 className="text-xl font-bold">
-								Design and PEB Fabrication
-							</h3>
-							<p className="text-black/85 dark:text-white/85">
-								We offer design, fabrication, installation,
-								upgrades, repairs, and maintenance of
-								Pre-Engineered Building (PEB) structures. Our
-								durable, compliant solutions extend the lifespan
-								and functionality of your buildings.
-							</p>
-							<ul className="list-disc list-inside">
-								<li>Steel Building Solutions</li>
-								<li>
-									Industrial and Commercial Building
-									Construction
-								</li>
-								<li>Roofing and Cladding Solutions</li>
-								<li>Structural Steel Fabrication</li>
-								<li>Pre-Engineered Building Systems</li>
-							</ul>
-							<Button variant="default">Learn More</Button>
-						</div>
-					</div>
-					<div className="relative overflow-hidden h-64 order-1 lg:order-2">
-						<Image
-							src="/fabrication.jpg"
-							layout="fill"
-							objectFit="cover"
-							alt="PEB Fabrication"
-							className="rounded-xl"
-						/>
-					</div>
-				</div>
-				<div className="grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-					<div className="relative overflow-hidden h-64 order-1 lg:order-1">
-						<Image
-							src="/electric.jpg"
-							layout="fill"
-							objectFit="cover"
-							alt="Electrical Services"
-							className="rounded-xl"
-						/>
-					</div>
-					<div className="flex flex-col justify-center order-2 lg:order-2">
-						<div className="grid gap-2">
-							<h3 className="text-xl font-bold">
-								Electrical Services
-							</h3>
-							<p className="text-black/85 dark:text-white/85">
-								We provide end-to-end electrical services,
-								including installations, upgrades, repairs, and
-								maintenance. Our team ensures efficient, safe,
-								and minimally disruptive electrical systems
-								tailored to your needs.
-							</p>
-							<ul className="list-disc list-inside">
-								<li> Residential and Commercial Wiring</li>
-								<li> Industrial Electrical Services</li>
-
-								<li> New Installations and Upgrades </li>
-								<li>
-									{" "}
-									Electromechanical Installation and
-									Maintenance{" "}
-								</li>
-								<li> Industrial Automation Solutions</li>
-								<li>
-									Electrical and Mechanical machine
-									Installation and Maintenance
-								</li>
-								<li> Electrical Inspections and testing</li>
-							</ul>
-							<Button variant="default">Learn More</Button>
-						</div>
-					</div>
-				</div>
-				<div className="grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-					<div className="flex flex-col justify-center order-2 lg:order-1">
-						<div className="grid gap-2">
-							<h3 className="text-xl font-bold">
-								Plumbing Services
-							</h3>
-							<p className="text-black/85 dark:text-white/85">
-								We deliver comprehensive plumbing services, from
-								installations and upgrades to repairs and
-								maintenance. Our skilled team ensures efficient,
-								safe, and reliable plumbing systems, addressing
-								issues promptly.
-							</p>
-
-							<Button variant="default">Learn More</Button>
-						</div>
-					</div>
-					<div className="relative overflow-hidden h-64 order-1 lg:order-2">
-						<Image
-							src="/plumbing.jpg"
-							layout="fill"
-							objectFit="cover"
-							alt="Plumbing Services"
-							className="rounded-xl"
-						/>
-					</div>
-				</div>
+				<Fabrication />
+				<Electric />
+				<Plumbing />
 			</div>
 		</section>
 	);
