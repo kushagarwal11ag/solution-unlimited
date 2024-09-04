@@ -14,7 +14,7 @@ const Plumbing = () => {
 						plumbing systems, addressing issues promptly.
 					</p>
 
-					<Button variant="default">Learn More</Button>
+					<Button variant="default">Read More</Button>
 				</div>
 			</div>
 			<div className="relative overflow-hidden h-64 order-1 lg:order-2">

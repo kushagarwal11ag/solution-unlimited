@@ -18,10 +18,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<head><link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
-        /></head>
+			<head>
+				<link
+					rel="stylesheet"
+					href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+				/>
+			</head>
 			<body className={inter.className}>
 				{" "}
 				<ThemeProvider

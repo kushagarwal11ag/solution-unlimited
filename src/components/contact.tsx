@@ -25,32 +25,32 @@ const Contact = () => {
 						<p>Manoj Kumar</p>
 						<Link
 							href="tel:+919512063666"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 w-fit"
 						>
 							<i className="fa-solid fa-phone"></i>+91 95120 63666
 						</Link>
 						<Link
 							href="mailto:solutionunlimited1991@gmail.com"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 w-fit"
 						>
 							<i className="fa-solid fa-envelope"></i>
-							solutionunlimited1991@gmail.com
+							<span className="text-xs xs:text-base">solutionunlimited1991@gmail.com</span>
 						</Link>
 					</div>
 					<div>
 						<p>Mukesh Vaghela</p>
 						<Link
 							href="tel:+919723025633"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 w-fit"
 						>
 							<i className="fa-solid fa-phone"></i>+91 97230 25633
 						</Link>
 						<Link
 							href="mailto:solutionunlimited1991@gmail.com"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 w-fit"
 						>
 							<i className="fa-solid fa-envelope"></i>
-							solutionunlimited1991@gmail.com
+							<span className="text-xs xs:text-base">solutionunlimited1991@gmail.com</span>
 						</Link>
 					</div>
 				</section>

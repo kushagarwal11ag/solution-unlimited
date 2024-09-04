@@ -58,11 +58,20 @@ const work = () => {
 						</div>
 					</div>
 				</div>
-				<div className="my-10 p-10 sm:p-20 bg-black dark:bg-white border rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]">
-					<p className="text-3xl text-white dark:text-black font-bold tracking-tighter">
-						Solution Unlimited - Empowering Industries, Anytime,
+
+				<div className="relative">
+					<div className="tk-blob fill-black dark:fill-white w-48 h-48 xs:w-64 xs:h-64 sm:w-96 sm:h-96">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 747.2 726.7"
+						>
+							<path d="M539.8 137.6c98.3 69 183.5 124 203 198.4 19.3 74.4-27.1 168.2-93.8 245-66.8 76.8-153.8 136.6-254.2 144.9-100.6 8.2-214.7-35.1-292.7-122.5S-18.1 384.1 7.4 259.8C33 135.6 126.3 19 228.5 2.2c102.1-16.8 213.2 66.3 311.3 135.4z"></path>
+						</svg>
+					</div>
+					<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none text-white dark:text-black flex flex-col gap-5 text-xs xs:text-sm sm:text-xl">
+						<span className="font-bold">Solution Unlimited</span>Empowering Industries, Anytime,
 						Anywhere
-					</p>
+					</div>
 				</div>
 			</div>
 		</section>
