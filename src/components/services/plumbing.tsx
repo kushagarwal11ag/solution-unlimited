@@ -1,5 +1,14 @@
 import Image from "next/image";
+
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
 
 const Plumbing = () => {
 	return (
@@ -17,15 +26,33 @@ const Plumbing = () => {
 					<Button variant="default">Read More</Button>
 				</div>
 			</div>
-			<div className="relative overflow-hidden h-64 order-1 lg:order-2">
-				<Image
-					src="/plumbing.jpg"
-					layout="fill"
-					objectFit="cover"
-					alt="Plumbing Services"
-					className="rounded-xl"
-				/>
-			</div>
+			<Carousel
+				className="overflow-hidden order-1 lg:order-2 rounded-xl"
+				plugins={[
+					Autoplay({
+						delay: 3000,
+					}),
+				]}
+			>
+				<CarouselContent>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/plumbing.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Plumbing pipes"
+						/>
+					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/plumbing-2.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Plumbing pipes construction"
+						/>
+					</CarouselItem>
+				</CarouselContent>
+			</Carousel>
 		</div>
 	);
 };

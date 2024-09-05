@@ -1,7 +1,16 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
 
 const Fabrication = () => {
 	const [expanded, setExpanded] = useState(false);
@@ -33,15 +42,28 @@ const Fabrication = () => {
 						<ul
 							className={`${
 								expanded ? "block" : "hidden"
-							} list-disc list-inside`}
+							} p-4 list-disc list-inside`}
 						>
-							<li>Steel Building Solutions</li>
-							<li>
+							<div className="flex">
+								<li></li>
+								Steel Building Solutions
+							</div>
+							<div className="flex">
+								<li></li>
 								Industrial and Commercial Building Construction
-							</li>
-							<li>Roofing and Cladding Solutions</li>
-							<li>Structural Steel Fabrication</li>
-							<li>Pre-Engineered Building Systems</li>
+							</div>
+							<div className="flex">
+								<li></li>
+								Roofing and Cladding Solutions
+							</div>
+							<div className="flex">
+								<li></li>
+								Structural Steel Fabrication
+							</div>
+							<div className="flex">
+								<li></li>
+								Pre-Engineered Building Systems
+							</div>
 						</ul>
 					</div>
 
@@ -50,15 +72,41 @@ const Fabrication = () => {
 					</Button>
 				</div>
 			</div>
-			<div className="relative overflow-hidden h-64 order-1 lg:order-2">
-				<Image
-					src="/fabrication.jpg"
-					layout="fill"
-					objectFit="cover"
-					alt="PEB Fabrication"
-					className="rounded-xl"
-				/>
-			</div>
+			<Carousel
+				className="overflow-hidden order-1 lg:order-2 rounded-xl"
+				plugins={[
+					Autoplay({
+						delay: 3000,
+					}),
+				]}
+			>
+				<CarouselContent>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/fabrication.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Man fabricating"
+						/>
+					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/fabrication-2.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Person fabricating pipes"
+						/>
+					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/fabrication-3.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Area undergoing construction"
+						/>
+					</CarouselItem>
+				</CarouselContent>
+			</Carousel>
 		</div>
 	);
 };

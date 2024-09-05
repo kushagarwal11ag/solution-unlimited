@@ -1,7 +1,16 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
 
 const Electric = () => {
 	const [expanded, setExpanded] = useState(false);
@@ -12,16 +21,42 @@ const Electric = () => {
 
 	return (
 		<div className="grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-			<div className="relative overflow-hidden h-64 order-1 lg:order-1">
-				<Image
-					src="/electric.jpg"
-					layout="fill"
-					objectFit="cover"
-					alt="Electrical Services"
-					className="rounded-xl"
-				/>
-			</div>
-			<div className="flex flex-col justify-center order-2 lg:order-2">
+			<Carousel
+				className="overflow-hidden order-1 rounded-xl"
+				plugins={[
+					Autoplay({
+						delay: 3000,
+					}),
+				]}
+			>
+				<CarouselContent>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/electric.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Working on electrical switch board"
+						/>
+					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/electric-2.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Man working on switch board"
+						/>
+					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/electric-3.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Working on electric board illustration"
+						/>
+					</CarouselItem>
+				</CarouselContent>
+			</Carousel>
+			<div className="flex flex-col justify-center order-2">
 				<div className="grid gap-2">
 					<h3 className="text-xl font-bold">Electrical Services</h3>
 
@@ -40,21 +75,37 @@ const Electric = () => {
 						<ul
 							className={`${
 								expanded ? "block" : "hidden"
-							} list-disc list-inside`}
+							} p-4 list-disc list-inside`}
 						>
-							<li> Residential and Commercial Wiring</li>
-							<li> Industrial Electrical Services</li>
-
-							<li> New Installations and Upgrades </li>
-							<li>
+							<div className="flex">
+								<li></li>
+								Residential and Commercial Wiring
+							</div>
+							<div className="flex">
+								<li></li>
+								Industrial Electrical Services
+							</div>
+							<div className="flex">
+								<li></li>
+								New Installations and Upgrades
+							</div>
+							<div className="flex">
+								<li></li>
 								Electromechanical Installation and Maintenance
-							</li>
-							<li> Industrial Automation Solutions</li>
-							<li>
+							</div>
+							<div className="flex">
+								<li></li>
+								Industrial Automation Solutions
+							</div>
+							<div className="flex">
+								<li></li>
 								Electrical and Mechanical machine Installation
 								and Maintenance
-							</li>
-							<li> Electrical Inspections and testing</li>
+							</div>
+							<div className="flex">
+								<li></li>
+								Electrical Inspections and testing
+							</div>
 						</ul>
 					</div>
 
