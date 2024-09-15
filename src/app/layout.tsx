@@ -23,6 +23,12 @@ export default function RootLayout({
 					rel="stylesheet"
 					href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
 				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/logo.svg"
+				/>
 			</head>
 			<body className={inter.className}>
 				{" "}

@@ -97,14 +97,6 @@ const Fabrication = () => {
 							alt="Person fabricating pipes"
 						/>
 					</CarouselItem>
-					<CarouselItem className="relative h-64">
-						<Image
-							src="/fabrication-3.jpg"
-							layout="fill"
-							objectFit="cover"
-							alt="Area undergoing construction"
-						/>
-					</CarouselItem>
 				</CarouselContent>
 			</Carousel>
 		</div>

@@ -54,6 +54,14 @@ const Electric = () => {
 							alt="Working on electric board illustration"
 						/>
 					</CarouselItem>
+					<CarouselItem className="relative h-64">
+						<Image
+							src="/electric-4.jpg"
+							layout="fill"
+							objectFit="cover"
+							alt="Working on electric board illustration"
+						/>
+					</CarouselItem>
 				</CarouselContent>
 			</Carousel>
 			<div className="flex flex-col justify-center order-2">
