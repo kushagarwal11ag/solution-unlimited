@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu as MenuIcon } from "lucide-react";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const mobileItems = [
 	{
@@ -73,8 +72,8 @@ const Navbar = () => {
 						</Button>
 					</SheetTrigger>
 					<SheetContent side="right">
-						<SheetTitle>
-							<VisuallyHidden.Root>Menu</VisuallyHidden.Root>
+						<SheetTitle className="dark:text-blue-800 text-blue-500">
+							Solution Unlimited
 						</SheetTitle>
 						<div className="mt-5 flex flex-col items-start gap-6">
 							{mobileItems.map((item, index) => (
