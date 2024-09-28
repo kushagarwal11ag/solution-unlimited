@@ -5,6 +5,7 @@ import Services from "@/components/services";
 import Work from "@/components/work";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Component() {
   return (
