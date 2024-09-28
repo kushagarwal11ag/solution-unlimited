@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import Logo from "./logo";
 import ToggleButton from "./mode-toggle";
@@ -16,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu as MenuIcon } from "lucide-react";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const mobileItems = [
 	{
@@ -34,7 +34,6 @@ const mobileItems = [
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
-	const router = useRouter();
 	const { theme } = useTheme();
 
 	return (
@@ -77,20 +76,20 @@ const Navbar = () => {
 						</Button>
 					</SheetTrigger>
 					<SheetContent side="right">
+						<SheetTitle>
+							<VisuallyHidden.Root>Menu</VisuallyHidden.Root>
+						</SheetTitle>
 						<div className="mt-5 flex flex-col items-start gap-6">
 							{mobileItems.map((item, index) => (
-								<Button
-									variant="ghost"
-									size="icon"
+								<Link
 									key={index}
-									className="w-full p-2"
+									href={item.link}
 									onClick={() => {
 										setOpen(false);
-										router.push(item.link);
 									}}
 								>
 									{item.name}
-								</Button>
+								</Link>
 							))}
 						</div>
 					</SheetContent>
