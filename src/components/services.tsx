@@ -1,6 +1,8 @@
 import Fabrication from "./services/fabrication";
 import Electric from "./services/electric";
 import Plumbing from "./services/plumbing";
+import Recycle from "./services/recycle";
+import Management from "./services/management";
 
 const services = () => {
 	return (
@@ -28,6 +30,8 @@ const services = () => {
 				<Fabrication />
 				<Electric />
 				<Plumbing />
+				<Recycle />
+				<Management />
 			</div>
 		</section>
 	);

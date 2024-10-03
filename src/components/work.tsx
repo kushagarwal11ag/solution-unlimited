@@ -76,7 +76,7 @@ const Work = () => {
 						suppressHydrationWarning
 					>
 						<LogoIcon className="self-center w-20 h-20 sm:h-32 sm:w-32" />
-						<h1 className="text-blue-800 dark:text-blue-600 font-bold">
+						<h1 className="text-blue-500 dark:text-blue-600 font-bold">
 							Solution Unlimited
 						</h1>
 						<p>Empowering Industries, Anytime, Anywhere</p>

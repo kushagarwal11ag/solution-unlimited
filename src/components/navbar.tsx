@@ -72,7 +72,7 @@ const Navbar = () => {
 						</Button>
 					</SheetTrigger>
 					<SheetContent side="right">
-						<SheetTitle className="dark:text-blue-800 text-blue-500">
+						<SheetTitle className="dark:text-blue-500 text-blue-500">
 							Solution Unlimited
 						</SheetTitle>
 						<div className="mt-5 flex flex-col items-start gap-6">
